@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot
+	name="drone">
+  <gazebo>
+	  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+	  <robotNamespace>/drone</robotNamespace>
+  	  </plugin>
+  </gazebo>
+  <link name="dummy">
+  </link>
+  <link
+    name="drone_body">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value=".6" />
+      <inertia
+        ixx=".001"
+	ixy="0.0"
+	ixz="0.0"
+        iyy=".001"
+        iyz="0"
+        izz=".001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/drone_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/drone_body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dummy_joint" type='fixed'>
+	  <parent link='dummy'/>
+	  <child link='drone_body'/>
+  </joint>
+  <link
+    name="front_arm">
+    <inertial>
+      <origin
+        xyz="-2.3295E-05 8.3267E-17 0.00050404"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_arm_joint"
+    type="continuous">
+    <origin
+      xyz="0.127 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="drone_body" />
+    <child
+      link="front_arm" />
+    <axis
+      xyz="0 -1 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="front_right_prop">
+    <inertial>
+      <origin
+        xyz="-7.3291E-05 0 0.0015858"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia
+        ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_prop_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00029316 -0.1524 0.0063432"
+      rpy="0 0 0" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_right_prop" />
+    <axis
+      xyz="-0.046167 0 0.99893" />
+  </joint>
+  <link
+    name="front_left_prop">
+    <inertial>
+      <origin
+        xyz="-7.3291E-05 -6.245E-17 0.0015858"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia
+        ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_prop_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00029316 0.1524 0.0063432"
+      rpy="0 0 0" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_left_prop" />
+    <axis
+      xyz="-0.046167 0 0.99893" />
+  </joint>
+  <link
+    name="back_arm">
+    <inertial>
+      <origin
+        xyz="-0.00010344 -6.9389E-17 0.00049386"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+	ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_arm_joint"
+    type="continuous">
+    <origin
+      xyz="-0.127 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="drone_body" />
+    <child
+      link="back_arm" />
+    <axis
+      xyz="0 -1 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_right_prop">
+    <inertial>
+      <origin
+        xyz="-0.00032544 0 0.0015538"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia
+	ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_right_prop_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0013018 -0.1524 0.0062151"
+      rpy="0 0 0" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_right_prop" />
+    <axis
+      xyz="-0.205 0 0.97876" />
+  </joint>
+  <link
+    name="back_left_prop">
+    <inertial>
+      <origin
+        xyz="-0.00032544 -4.8572E-17 0.0015538"
+        rpy="0 0 0" />
+      <mass
+        value="0.02" />
+      <inertia
+        ixx=".0001"
+        ixy="0"
+        ixz="0"
+        iyy=".0001"
+        iyz="0"
+        izz=".0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_prop_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0013018 0.1524 0.0062151"
+      rpy="0 0 0" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_left_prop" />
+    <axis
+      xyz="-0.205 0 0.97876" />
+  </joint>
+  <transmission name="front_arm_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="front_arm_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="front_arm_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <transmission name="back_arm_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="back_arm_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="front_arm_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <transmission name="front_right_prop_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="front_right_prop_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="front_right_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <transmission name="front_left_prop_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="front_left_prop_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="front_left_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <transmission name="back_right_prop_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="back_right_prop_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="back_right_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <transmission name="back_left_prop_transmission">
+	  <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="back_left_prop_joint">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+	  <actuator name="back_left_motor">
+		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  <mechanicalReduction>1</mechanicalReduction>
+  	  </actuator>
+  </transmission>
+  <gazebo>
+	<plugin name='gazebo_ros_force' filename='libgazebo_ros_force.so'>
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>100.0</updateRate>
+		<bodyName>front_right_prop</bodyName>
+		<topicName>drone/front_right_motor_thrust</topicName>
+	</plugin>
+	<plugin name='gazebo_ros_force' filename='libgazebo_ros_force.so'>
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>100.0</updateRate>
+		<bodyName>front_left_prop</bodyName>
+		<topicName>drone/front_left_motor_thrust</topicName>
+	</plugin>
+	<plugin name='gazebo_ros_force' filename='libgazebo_ros_force.so'>
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>100.0</updateRate>
+		<bodyName>back_right_prop</bodyName>
+		<topicName>drone/back_right_motor_thrust</topicName>
+	</plugin>
+	<plugin name='gazebo_ros_force' filename='libgazebo_ros_force.so'>
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>100.0</updateRate>
+		<bodyName>back_left_prop</bodyName>
+		<topicName>drone/back_left_motor_thrust</topicName>
+	</plugin>
+	<plugin name='gazebo_ros_force' filename='libgazebo_ros_force.so'>
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>100.0</updateRate>
+		<bodyName>drone_body</bodyName>
+		<topicName>drone/drone_body_force</topicName>
+	</plugin>
+	<plugin name="imu_controller" filename="libgazebo_ros_imu.so">
+		<alwaysON>true</alwaysON>
+		<update>100</update>
+		<updateRate>50.0</updateRate>
+		<bodyName>drone_body</bodyName>
+		<topicName>drone/imu_data</topicName>
+		<gaussianNoise>2.89e-08</gaussianNoise>
+		<xyzOffsets> 0 0 0 </xyzOffsets>
+		<rpyOffsets> 0 0 0 </rpyOffsets>
+	</plugin>
+  </gazebo>
+  </robot>

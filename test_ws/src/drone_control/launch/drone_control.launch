@@ -1,0 +1,10 @@
+<launch>
+	<rosparam file="$(find drone_control)/config/drone_control.yaml" command="load"/>
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/drone" args="front_arm_position_controller back_arm_position_controller front_right_motor_velocity_controller front_left_motor_velocity_controller back_right_motor_velocity_controller back_left_motor_velocity_controller"/>
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+	<remap from="/robot_description" to="/drone/robot_description"/>
+	<remap from="/joint_states" to="/drone/joint_states"/>
+	</node>
+
+</launch>

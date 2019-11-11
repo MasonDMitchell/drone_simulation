@@ -1,0 +1,8 @@
+prefix=/home/mason/test_ws/install
+
+Name: drone_gazebo
+Description: Description of drone_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mason/test_ws/install/lib 
+Requires: 

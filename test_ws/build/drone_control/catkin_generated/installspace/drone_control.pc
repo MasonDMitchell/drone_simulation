@@ -1,0 +1,8 @@
+prefix=/home/mason/test_ws/install
+
+Name: drone_control
+Description: Description of drone_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/mason/test_ws/install/lib 
+Requires: 

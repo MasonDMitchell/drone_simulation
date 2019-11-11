@@ -1,0 +1,8 @@
+prefix=/home/mason/test_ws/install
+
+Name: drone_description
+Description: Description of drone_description
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/mason/test_ws/install/lib 
+Requires: 
