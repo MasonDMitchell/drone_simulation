@@ -17,7 +17,7 @@
 	<node name="controller" pkg="pid" type="controller" ns="/height" output="screen">
 	<param name="node_name" value="height_pid"/>
 	<param name="Kp" value = ".6"/>
-	<param name="Ki" value = ".1"/>
+	<param name="Ki" value = "0"/>
 	<param name="Kd" value = ".5"/>
 	<param name="upper_limit" value=".8"/>
 	<param name="lower_limit" value="-.2"/>
@@ -25,30 +25,32 @@
 
 	<node name="controller" pkg="pid" type="controller" ns="/roll" output="screen">
 	<param name="node_name" value="roll_pid"/>
-	<param name="Kp" value=".05"/>
-	<param name="Ki" value=".0"/>
-	<param name="Kd" value=".075"/>
-	<param name="upper_limit" value=".8"/>
-	<param name="lower_limit" value="-.8"/>
+	<param name="Kp" value=".015"/>
+	<param name="Ki" value=".00"/>
+	<param name="Kd" value=".0025"/>
+	<param name="upper_limit" value=".4"/>
+	<param name="lower_limit" value="-.4"/>
 	</node>
 	
 	<node name="controller" pkg="pid" type="controller" ns="/pitch" output="screen">
 	<param name="node_name" value="pitch_pid"/>
-	<param name="Kp" value=".05"/>
-	<param name="Ki" value=".0"/>
-	<param name="Kd" value=".075"/>
-	<param name="upper_limit" value=".8"/>
-	<param name="lower_limit" value="-.8"/>
+	<param name="Kp" value=".015"/>
+	<param name="Ki" value="0"/>
+	<param name="Kd" value=".0025"/>
+	<param name="upper_limit" value=".4"/>
+	<param name="lower_limit" value="-.4"/>
 	</node>
 
 	<node name="controller" pkg="pid" type="controller" ns="/yaw" output="screen">
 	<param name="node_name" value="yaw_pid"/>
-	<param name="Kp" value=".01"/>
+	<param name="Kp" value=".015"/>
 	<param name="Ki" value="0"/>
-	<param name="Kd" value=".1"/>
-	<param name="upper_limit" value=".15"/>
-	<param name="lower_limit" value="-.15"/>
+	<param name="Kd" value=".0025"/>
+	<param name="upper_limit" value=".3"/>
+	<param name="lower_limit" value="-.3"/>
 	</node>
 	
+	<node pkg="drone_control" name="imumap" type="imumap.py" output="screen"/>
 	<node pkg="drone_control" name="pidcontrol" type="pidcontrol.py" output="screen"/>
+	
 </launch>

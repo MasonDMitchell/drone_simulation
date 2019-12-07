@@ -19,12 +19,12 @@ class Remap():
         height = rospy.Publisher("/height/state",Float64,queue_size=10)
         roll = rospy.Publisher("/roll/state",Float64,queue_size=10)
         pitch = rospy.Publisher("/pitch/state",Float64,queue_size=10)
-        yaw = rospy.Publisher("/yaw/state",Float64,queue_size=10)
+        #yaw = rospy.Publisher("/yaw/state",Float64,queue_size=10)
         while not rospy.is_shutdown():
             height.publish(self.height)
             roll.publish(self.roll)
             pitch.publish(self.pitch)
-            yaw.publish(self.yaw)
+            #yaw.publish(self.yaw)
         return
     def pos_update(self,data):
         names = data.name
@@ -37,9 +37,9 @@ class Remap():
 
     def qv_eul(self,q1):
         self.euler = tf.transformations.euler_from_quaternion(q1)
-        self.roll = self.euler[0] 
+        self.roll = (self.euler[0])
         self.pitch = self.euler[1]
-        self.yaw = self.euler[2]
+        #self.yaw = self.euler[2]
         return tf.transformations.euler_from_quaternion(q1)
 
 if __name__ == '__main__':

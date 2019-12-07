@@ -21,18 +21,19 @@ class Remap():
         sub = rospy.Subscriber("/joy", Joy, self.callback)
         while not rospy.is_shutdown():
             throttle.publish(self.throttle)
-            roll.publish(self.roll)
-            pitch.publish(self.pitch)
+            roll.publish(-self.roll)
+            pitch.publish(-self.pitch)
             yaw.publish(self.yaw)
-            front_arm.publish(self.arm-.21)
-            back_arm.publish(self.arm-.06)
+            front_arm.publish(self.arm)
+            back_arm.publish(-self.arm)
         return
     def callback(self, data):
         self.throttle = (-data.axes[0]+1)/2
         self.roll = data.axes[1]/2
         self.pitch = data.axes[2]/2
-        self.yaw_placeholder = self.yaw_placeholder + (.01*data.axes[3]*3.14159)
-        self.yaw = (self.yaw_placeholder+3.14159)%  (2*3.14159) - 3.14159
+        #self.yaw_placeholder = self.yaw_placeholder + (.01*data.axes[3]*3.14159)
+        #self.yaw = (self.yaw_placeholder+3.14159)%  (2*3.14159) - 3.14159
+        self.yaw = data.axes[3]*2
         self.arm = data.axes[4]*(3.14159/4)
         return 
 

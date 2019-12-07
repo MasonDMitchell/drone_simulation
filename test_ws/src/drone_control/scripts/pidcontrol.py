@@ -11,7 +11,7 @@ class Control():
         self.roll = 0
         self.pitch = 0 
         self.yaw = 0 
-        self.constant = 8.5
+        self.constant = 2
         self.height = 0
         self.enable = False
         self.FR_quat = [0,0,0,0]

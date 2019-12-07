@@ -6,24 +6,24 @@ drone:
         front_arm_position_controller:
                 type: "effort_controllers/JointPositionController"
                 joint: "front_arm_joint"
-                pid: {p: 5, i: .01, d: .005}
+                pid: {p: .05, i: .0, d: .005}
         back_arm_position_controller:
                 type: "effort_controllers/JointPositionController"
                 joint: "back_arm_joint"
-                pid: {p: 5, i: .01, d: .005}
+                pid: {p: .05, i: .0, d: .005}
         front_right_motor_velocity_controller:
                 type: "effort_controllers/JointVelocityController"
                 joint: "front_right_prop_joint"
-                pid: {p: .1, i: 0, d: 0}
+                pid: {p: .001, i: 0, d: 0}
         front_left_motor_velocity_controller:
                 type: "effort_controllers/JointVelocityController"
                 joint: "front_left_prop_joint"
-                pid: {p: .1, i: 0, d: 0}
+                pid: {p: .001, i: 0, d: 0}
         back_right_motor_velocity_controller:
                 type: "effort_controllers/JointVelocityController"
                 joint: "back_right_prop_joint"
-                pid: {p: .1, i: 0, d: 0}
+                pid: {p: .001, i: 0, d: 0}
         back_left_motor_velocity_controller:
                 type: "effort_controllers/JointVelocityController"
                 joint: "back_left_prop_joint"
-                pid: {p: .1, i: 0, d: 0}
+                pid: {p: .001, i: 0, d: 0}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <robot
-	name="drone">
+  name="drone">
   <gazebo>
 	  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
 	  <robotNamespace>/drone</robotNamespace>
@@ -13,17 +13,17 @@
     name="drone_body">
     <inertial>
       <origin
-        xyz="2.7756E-17 0 5.5511E-17"
+        xyz="6.90261175689821E-07 -7.76402158900379E-17 -0.00708554037270278"
         rpy="0 0 0" />
       <mass
-        value=".6" />
+        value="0.167539145797033" />
       <inertia
-        ixx=".001"
-	ixy="0.0"
-	ixz="0.0"
-        iyy=".001"
+        ixx="0.000214883795512909"
+        ixy="0"
+        ixz="0"
+        iyy="0.000668478544648389"
         iyz="0"
-        izz=".001" />
+        izz="0.00067364768411918" />
     </inertial>
     <visual>
       <origin
@@ -36,7 +36,7 @@
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
     <collision>
@@ -50,24 +50,24 @@
     </collision>
   </link>
   <joint name="dummy_joint" type='fixed'>
-	  <parent link='dummy'/>
+	  <parent link="dummy"/>
 	  <child link='drone_body'/>
   </joint>
   <link
     name="front_arm">
     <inertial>
       <origin
-        xyz="-2.3295E-05 8.3267E-17 0.00050404"
+        xyz="1.14492907365982E-06 1.09344178617796E-10 -0.000555918350244255"
         rpy="0 0 0" />
       <mass
-        value="0.1" />
+        value="0.0710004012196545" />
       <inertia
-        ixx=".0001"
+        ixx="0.000168398796233936"
         ixy="0"
-        ixz="0"
-        iyy=".0001"
+        ixz="3.09362417973379E-09"
+        iyy="4.23355717997767E-06"
         iyz="0"
-        izz=".0001" />
+        izz="0.000166895622284156" />
     </inertial>
     <visual>
       <origin
@@ -80,7 +80,7 @@
       <material
         name="">
         <color
-          rgba="0.75294 0.75294 0.75294 1" />
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
     <collision>
@@ -97,14 +97,14 @@
     name="front_arm_joint"
     type="continuous">
     <origin
-      xyz="0.127 0 0"
+      xyz="0.132700704261176 0 -0.00475833781314276"
       rpy="0 0 0" />
     <parent
       link="drone_body" />
     <child
       link="front_arm" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
     <safety_controller
       k_velocity="0" />
   </joint>
@@ -112,17 +112,17 @@
     name="front_right_prop">
     <inertial>
       <origin
-        xyz="-7.3291E-05 0 0.0015858"
+        xyz="-3.26936723760163E-06 0 0.00158749663345718"
         rpy="0 0 0" />
       <mass
-        value="0.02" />
+        value="0.00504005698984341" />
       <inertia
-        ixx=".0001"
+        ixx="1.27163288662511E-06"
         ixy="0"
         ixz="0"
-        iyy=".0001"
+        iyy="1.2716275291741E-06"
         iyz="0"
-        izz=".0001" />
+        izz="2.5347818801483E-06" />
     </inertial>
     <visual>
       <origin
@@ -152,30 +152,32 @@
     name="front_right_prop_joint"
     type="continuous">
     <origin
-      xyz="-0.00029316 -0.1524 0.0063432"
+      xyz="-3.92324068519967E-05 -0.1325 0.0190499596014851"
       rpy="0 0 0" />
     <parent
       link="front_arm" />
     <child
       link="front_right_prop" />
     <axis
-      xyz="-0.046167 0 0.99893" />
+      xyz="-0.00205944392919794 0 0.999997879343103" />
+    <safety_controller
+      k_velocity="0" />
   </joint>
   <link
     name="front_left_prop">
     <inertial>
       <origin
-        xyz="-7.3291E-05 -6.245E-17 0.0015858"
+        xyz="-3.26936723760163E-06 0 0.00158749663345718"
         rpy="0 0 0" />
       <mass
-        value="0.02" />
+        value="0.00504005698984342" />
       <inertia
-        ixx=".0001"
+        ixx="1.27163288662511E-06"
         ixy="0"
         ixz="0"
-        iyy=".0001"
+        iyy="1.2716275291741E-06"
         iyz="0"
-        izz=".0001" />
+        izz="2.5347818801483E-06" />
     </inertial>
     <visual>
       <origin
@@ -205,30 +207,32 @@
     name="front_left_prop_joint"
     type="continuous">
     <origin
-      xyz="-0.00029316 0.1524 0.0063432"
+      xyz="-3.9232E-05 0.1325 0.01905"
       rpy="0 0 0" />
     <parent
       link="front_arm" />
     <child
       link="front_left_prop" />
     <axis
-      xyz="-0.046167 0 0.99893" />
+      xyz="-0.0020594 0 1" />
+    <safety_controller
+      k_velocity="0" />
   </joint>
   <link
     name="back_arm">
     <inertial>
       <origin
-        xyz="-0.00010344 -6.9389E-17 0.00049386"
+        xyz="-3.942E-07 -3.7693E-11 -0.00055592"
         rpy="0 0 0" />
       <mass
-        value="0.1" />
+        value="0.071" />
       <inertia
-	ixx=".0001"
+        ixx="0.0001684"
         ixy="0"
         ixz="0"
-        iyy=".0001"
+        iyy="4.2336E-06"
         iyz="0"
-        izz=".0001" />
+        izz="0.0001669" />
     </inertial>
     <visual>
       <origin
@@ -258,7 +262,7 @@
     name="back_arm_joint"
     type="continuous">
     <origin
-      xyz="-0.127 0 0"
+      xyz="-0.1327 0 0.015242"
       rpy="0 0 0" />
     <parent
       link="drone_body" />
@@ -273,17 +277,17 @@
     name="back_right_prop">
     <inertial>
       <origin
-        xyz="-0.00032544 0 0.0015538"
+        xyz="1.1259E-06 -2.7756E-17 0.0015875"
         rpy="0 0 0" />
       <mass
-        value="0.02" />
-      <inertia
-	ixx=".0001"
+        value="0.0050401" />
+<inertia
+	ixx="1.27162816455521E-06"
         ixy="0"
         ixz="0"
-        iyy=".0001"
+        iyy="1.27162752917409E-06"
         iyz="0"
-        izz=".0001" />
+        izz="2.5347866022182E-06" />
     </inertial>
     <visual>
       <origin
@@ -313,30 +317,32 @@
     name="back_right_prop_joint"
     type="continuous">
     <origin
-      xyz="-0.0013018 -0.1524 0.0062151"
+      xyz="1.35108601621321E-05 -0.1325 0.0190499952088356"
       rpy="0 0 0" />
     <parent
       link="back_arm" />
     <child
       link="back_right_prop" />
     <axis
-      xyz="-0.205 0 0.97876" />
+      xyz="0.000709231504572137 0 0.999999748495305" />
+    <safety_controller
+      k_velocity="0" />
   </joint>
   <link
     name="back_left_prop">
     <inertial>
       <origin
-        xyz="-0.00032544 -4.8572E-17 0.0015538"
+        xyz="1.12590501349756E-06 0 0.0015874996007363"
         rpy="0 0 0" />
       <mass
-        value="0.02" />
+        value="0.00504005698984341" />
       <inertia
-        ixx=".0001"
+        ixx="1.27162816455521E-06"
         ixy="0"
         ixz="0"
-        iyy=".0001"
+        iyy="1.2716275291741E-06"
         iyz="0"
-        izz=".0001" />
+        izz="2.5347866022182E-06" />
     </inertial>
     <visual>
       <origin
@@ -366,16 +372,18 @@
     name="back_left_prop_joint"
     type="continuous">
     <origin
-      xyz="-0.0013018 0.1524 0.0062151"
+      xyz="1.35108601620748E-05 0.1325 0.0190499952088355"
       rpy="0 0 0" />
     <parent
-      link="back_arm" />
+	    link="back_arm" />
     <child
       link="back_left_prop" />
     <axis
-      xyz="-0.205 0 0.97876" />
+      xyz="0.000709231504572137 0 0.999999748495305" />
+    <safety_controller
+      k_velocity="0" />
   </joint>
-  <transmission name="front_arm_transmission">
+   <transmission name="front_arm_transmission">
 	  <type>transmission_interface/SimpleTransmission</type>
 	  <joint name="front_arm_joint">
 		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -482,4 +490,4 @@
 		<rpyOffsets> 0 0 0 </rpyOffsets>
 	</plugin>
   </gazebo>
-  </robot>
+</robot>
