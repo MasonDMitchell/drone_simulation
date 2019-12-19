@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.0-0-g9aa0fdb  Build Version: 1.5.7004.21443
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="drone_description">
+  <link
+    name="drone_body">
+    <inertial>
+      <origin
+        xyz="0.00037727104002184 2.89864944904331E-05 -0.00750285109539086"
+        rpy="0 0 0" />
+      <mass
+        value="0.357420415627526" />
+      <inertia
+        ixx="0.000438219852783832"
+        ixy="0.000109200110248878"
+        ixz="-3.73094379691416E-10"
+        iyy="0.00167682905269243"
+        iyz="2.35329923558303E-12"
+        izz="0.0016915663631846" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/drone_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/drone_body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_arm">
+    <inertial>
+      <origin
+        xyz="-3.32815637438255E-07 0.00528847069891163 -4.23077371747294E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0488863352917366" />
+      <inertia
+        ixx="0.000132396833896061"
+        ixy="-4.99567917336989E-13"
+        ixz="-7.39033950292171E-13"
+        iyy="0.000132377174520321"
+        iyz="-2.47372363052085E-17"
+        izz="2.60423234522648E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_arm_joint"
+    type="continuous">
+    <origin
+      xyz="0.13275334064868 -0.00722327848964719 -0.00540264439683487"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="drone_body" />
+    <child
+      link="front_arm" />
+    <axis
+      xyz="0 0 -1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="front_right_prop">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -2.77555756156289E-17 0.0015875"
+        rpy="0 0 0" />
+      <mass
+        value="0.00504005698984341" />
+      <inertia
+        ixx="1.2716275291741E-06"
+        ixy="3.37489689921635E-22"
+        ixz="2.04585029939092E-22"
+        iyy="1.27162752917409E-06"
+        iyz="-1.00319883079063E-23"
+        izz="2.53478723759932E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_prop_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0190499999622372 0.1325"
+      rpy="-1.5707963267949 0 6.29649045572343E-05" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_right_prop" />
+    <axis
+      xyz="0 0 1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="front_left_prop">
+    <inertial>
+      <origin
+        xyz="0 0 0.0015875"
+        rpy="0 0 0" />
+      <mass
+        value="0.00504005698984341" />
+      <inertia
+        ixx="1.2716275291741E-06"
+        ixy="-4.36751363427999E-22"
+        ixz="2.2224016613827E-22"
+        iyy="1.2716275291741E-06"
+        iyz="2.10983562782874E-23"
+        izz="2.53478723759932E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_prop_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0190499999622375 -0.1325"
+      rpy="-1.5707963267949 0 6.29649045572343E-05" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_left_prop" />
+    <axis
+      xyz="0 0 1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="front_right_wing">
+    <inertial>
+      <origin
+        xyz="-2.56871427684047E-07 -6.69619957455181E-07 8.55690921422909E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0106409229155552" />
+      <inertia
+        ixx="3.22240827607208E-05"
+        ixy="8.34233188884897E-12"
+        ixz="4.40330785279026E-13"
+        iyy="1.00346951370682E-06"
+        iyz="-2.44420885016909E-21"
+        izz="3.14347766518031E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_right_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wing_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0170179999662656 0.1325"
+      rpy="-1.5707963267949 0 6.29649045571202E-05" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_right_wing" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="front_left_wing">
+    <inertial>
+      <origin
+        xyz="2.56846023199975E-07 6.69619957371914E-07 8.55690884140337E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0106409229167305" />
+      <inertia
+        ixx="3.22240827618886E-05"
+        ixy="8.34233188911367E-12"
+        ixz="-4.43666864148229E-13"
+        iyy="1.00346951311838E-06"
+        iyz="1.74649412038412E-22"
+        izz="3.14347766541992E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/front_left_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wing_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0170179999662652 -0.1325"
+      rpy="-1.5707963267949 0 6.29649045573601E-05" />
+    <parent
+      link="front_arm" />
+    <child
+      link="front_left_wing" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_arm">
+    <inertial>
+      <origin
+        xyz="1.01226756657469E-05 0.00528846104534083 1.66339450026476E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0488863353584465" />
+      <inertia
+        ixx="0.000132396833691044"
+        ixy="-3.93802397789225E-11"
+        ixz="-7.55545830783203E-13"
+        iyy="0.000132377174483336"
+        iyz="2.44966822466015E-16"
+        izz="2.60423235602468E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_arm_joint"
+    type="continuous">
+    <origin
+      xyz="-0.13125 0.015874 0.014597"
+      rpy="1.5708 0 -0.17453" />
+    <parent
+      link="drone_body" />
+    <child
+      link="back_arm" />
+    <axis
+      xyz="0 0 1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_right_prop">
+    <inertial>
+      <origin
+        xyz="0 0 0.0015875"
+        rpy="0 0 0" />
+      <mass
+        value="0.00504005698984341" />
+      <inertia
+        ixx="1.2716275291741E-06"
+        ixy="2.31610571514848E-22"
+        ixz="-6.82424005356248E-24"
+        iyy="1.2716275291741E-06"
+        iyz="1.20367703823537E-22"
+        izz="2.53478723759932E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_right_prop_joint"
+    type="continuous">
+    <origin
+      xyz="3.64629030858155E-05 0.0190499651038184 0.1325"
+      rpy="-1.5707963267949 0 -0.00191406432285098" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_right_prop" />
+    <axis
+      xyz="0 0 1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_left_prop">
+    <inertial>
+      <origin
+        xyz="0 0 0.0015875"
+        rpy="0 0 0" />
+      <mass
+        value="0.00504005698984341" />
+      <inertia
+        ixx="1.2716275291741E-06"
+        ixy="-2.64697796016969E-22"
+        ixz="1.28212994945719E-23"
+        iyy="1.2716275291741E-06"
+        iyz="1.32348898008484E-22"
+        izz="2.53478723759932E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_prop.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_prop.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_prop_joint"
+    type="continuous">
+    <origin
+      xyz="3.6463E-05 0.01905 -0.1325"
+      rpy="-1.5708 0 -0.0019141" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_left_prop" />
+    <axis
+      xyz="0 0 1" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_right_wing">
+    <inertial>
+      <origin
+        xyz="1.21655134022181E-08 0 8.47138140920327E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0106410240095179" />
+      <inertia
+        ixx="3.22240827652041E-05"
+        ixy="8.34233189020555E-12"
+        ixz="4.93419365802072E-13"
+        iyy="1.00346951237549E-06"
+        iyz="-9.95408469631E-22"
+        izz="3.14347766576976E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_right_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_right_wing_joint"
+    type="fixed">
+    <origin
+      xyz="-3.25735267566463E-05 -0.0170179688260777 0.1325"
+      rpy="-1.5707963267949 0 -0.00191406432285109" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_right_wing" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="back_left_wing">
+    <inertial>
+      <origin
+        xyz="-1.13069331952875E-08 -5.55111512312578E-17 8.47139273855986E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0106410239738009" />
+      <inertia
+        ixx="3.22240827297183E-05"
+        ixy="8.34233188905411E-12"
+        ixz="-3.9203650451198E-13"
+        iyy="1.00346953026033E-06"
+        iyz="-1.47074005381635E-21"
+        izz="3.14347765848837E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_wing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drone_description/meshes/back_left_wing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_wing_joint"
+    type="fixed">
+    <origin
+      xyz="-3.25735267566463E-05 -0.0170179688260778 -0.1325"
+      rpy="-1.5707963267949 0 -0.00191406432285109" />
+    <parent
+      link="back_arm" />
+    <child
+      link="back_left_wing" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+</robot>
