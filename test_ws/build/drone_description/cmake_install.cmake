@@ -1,8 +1,8 @@
-# Install script for directory: /home/mason/test_ws/src/drone_description
+# Install script for directory: /home/mason/drone_simulation/test_ws/src/drone_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mason/test_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mason/drone_simulation/test_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,33 +38,33 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mason/test_ws/build/drone_description/catkin_generated/installspace/drone_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mason/drone_simulation/test_ws/build/drone_description/catkin_generated/installspace/drone_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/cmake" TYPE FILE FILES
-    "/home/mason/test_ws/build/drone_description/catkin_generated/installspace/drone_descriptionConfig.cmake"
-    "/home/mason/test_ws/build/drone_description/catkin_generated/installspace/drone_descriptionConfig-version.cmake"
+    "/home/mason/drone_simulation/test_ws/build/drone_description/catkin_generated/installspace/drone_descriptionConfig.cmake"
+    "/home/mason/drone_simulation/test_ws/build/drone_description/catkin_generated/installspace/drone_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description" TYPE FILE FILES "/home/mason/test_ws/src/drone_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description" TYPE FILE FILES "/home/mason/drone_simulation/test_ws/src/drone_description/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/config" TYPE DIRECTORY FILES "/home/mason/test_ws/src/drone_description/config/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/config" TYPE DIRECTORY FILES "/home/mason/drone_simulation/test_ws/src/drone_description/config/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/launch" TYPE DIRECTORY FILES "/home/mason/test_ws/src/drone_description/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/launch" TYPE DIRECTORY FILES "/home/mason/drone_simulation/test_ws/src/drone_description/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/meshes" TYPE DIRECTORY FILES "/home/mason/test_ws/src/drone_description/meshes/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/meshes" TYPE DIRECTORY FILES "/home/mason/drone_simulation/test_ws/src/drone_description/meshes/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/urdf" TYPE DIRECTORY FILES "/home/mason/test_ws/src/drone_description/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_description/urdf" TYPE DIRECTORY FILES "/home/mason/drone_simulation/test_ws/src/drone_description/urdf/")
 endif()
 

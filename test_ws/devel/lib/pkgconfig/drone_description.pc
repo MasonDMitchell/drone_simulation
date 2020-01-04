@@ -1,8 +1,8 @@
-prefix=/home/mason/test_ws/devel
+prefix=/home/mason/drone_simulation/test_ws/devel
 
 Name: drone_description
 Description: Description of drone_description
 Version: 1.0.0
 Cflags: 
-Libs: -L/home/mason/test_ws/devel/lib 
+Libs: -L/home/mason/drone_simulation/test_ws/devel/lib 
 Requires: 

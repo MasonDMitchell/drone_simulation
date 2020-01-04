@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/mason/test_ws/install/setup.sh
+    local-name: /home/mason/drone_simulation/test_ws/install/setup.sh

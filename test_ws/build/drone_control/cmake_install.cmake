@@ -1,8 +1,8 @@
-# Install script for directory: /home/mason/test_ws/src/drone_control
+# Install script for directory: /home/mason/drone_simulation/test_ws/src/drone_control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mason/test_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mason/drone_simulation/test_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mason/test_ws/build/drone_control/catkin_generated/installspace/drone_control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mason/drone_simulation/test_ws/build/drone_control/catkin_generated/installspace/drone_control.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_control/cmake" TYPE FILE FILES
-    "/home/mason/test_ws/build/drone_control/catkin_generated/installspace/drone_controlConfig.cmake"
-    "/home/mason/test_ws/build/drone_control/catkin_generated/installspace/drone_controlConfig-version.cmake"
+    "/home/mason/drone_simulation/test_ws/build/drone_control/catkin_generated/installspace/drone_controlConfig.cmake"
+    "/home/mason/drone_simulation/test_ws/build/drone_control/catkin_generated/installspace/drone_controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_control" TYPE FILE FILES "/home/mason/test_ws/src/drone_control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/drone_control" TYPE FILE FILES "/home/mason/drone_simulation/test_ws/src/drone_control/package.xml")
 endif()
 

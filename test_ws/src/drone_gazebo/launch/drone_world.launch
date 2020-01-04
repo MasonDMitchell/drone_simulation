@@ -6,9 +6,9 @@
         <arg name="headless" default="false"/>
         <arg name="debug" default="false"/>
 
-        <param name="drone/robot_description" textfile="$(find drone_description)/urdf/drone_description.urdf"/>
-        <param name="robot_description" textfile="$(find drone_description)/urdf/drone_description.urdf"/>
-        <param name="drone_description" textfile="$(find drone_description)/urdf/drone_description.urdf"/>
+        <param name="drone/robot_description" textfile="../../drone_description/urdf/drone_description.urdf"/>
+        <param name="robot_description" textfile="../../drone_description/urdf/drone_description.urdf"/>
+        <param name="drone_description" textfile="../../drone_description/urdf/drone_description.urdf"/>
 
         <include file="$(find gazebo_ros)/launch/empty_world.launch">
           <arg name="world_name" value="$(find drone_gazebo)/worlds/drone.world"/>

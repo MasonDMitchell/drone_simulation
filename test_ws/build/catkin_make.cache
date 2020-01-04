@@ -1,2 +1,2 @@
 drone_control:drone_description:drone_gazebo
--DCATKIN_DEVEL_PREFIX=/home/mason/test_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mason/test_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/mason/drone_simulation/test_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mason/drone_simulation/test_ws/install -G Unix Makefiles
