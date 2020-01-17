@@ -2,10 +2,24 @@
 <sdf version="1.4">
 
   <world name="default">
+    <scene>
+	<sky>
+	  <clouds>
+	    <speed>12</speed>
+	  </clouds>
+	</sky>
+    </scene>
+
     <include>
       <uri>model://ground_plane</uri>
     </include>
 
+    <include>
+      <uri>model://grass_plane</uri>
+      <name>grass_plane_0_0</name>
+      <pose>0 -1 0   0 0 0</pose>
+    </include>
+    
     <!-- Global light source -->
     <include>
       <uri>model://sun</uri>

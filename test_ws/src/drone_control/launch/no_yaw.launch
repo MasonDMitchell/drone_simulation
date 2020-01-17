@@ -37,15 +37,6 @@
 	<param name="lower_limit" value="-.4"/>
 	</node>
 
-	<node name="controller" pkg="pid" type="controller" ns="/yaw" output="screen">
-	<param name="node_name" value="yaw_pid"/>
-	<param name="Kp" value=".015"/>
-	<param name="Ki" value="0"/>
-	<param name="Kd" value=".0025"/>
-	<param name="upper_limit" value=".3"/>
-	<param name="lower_limit" value="-.3"/>
-	</node>
-	
 	<node pkg="drone_control" name="imumap" type="imumap.py" output="screen"/>
 	<node pkg="drone_control" name="pidcontrol" type="pidcontrol.py" output="screen"/>
 	
