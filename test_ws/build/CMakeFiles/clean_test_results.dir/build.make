@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/mason/drone_simulation/test_ws/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/mason/drone_simulation/test_ws/build/test_results
+	/usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/mason/drone_simulation/test_ws/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make

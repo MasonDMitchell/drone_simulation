@@ -1,0 +1,54 @@
+<launch>
+
+	<rosparam file="$(find drone_control)/config/drone_control.yaml" command="load"/>
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/drone" args="front_arm_position_controller back_arm_position_controller front_right_motor_velocity_controller front_left_motor_velocity_controller back_right_motor_velocity_controller back_left_motor_velocity_controller"/>
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+	<remap from="/robot_description" to="/drone/robot_description"/>
+	<remap from="/joint_states" to="/drone/joint_states"/>
+	</node>
+	
+	<node pkg="drone_control" name="quat_to_euler" type="quat_to_euler.py" output="screen"/>
+
+	<node name="controller" pkg="pid" type="controller" ns="/height" output="screen">
+	<param name="node_name" value="height_pid"/>
+	<param name="Kp" value = ".6"/>
+	<param name="Ki" value = "0"/>
+	<param name="Kd" value = ".5"/>
+	<param name="pid_enable_topic" value = "False"/>
+	<param name="upper_limit" value=".8"/>
+	<param name="lower_limit" value="-.2"/>
+	</node>
+
+	<node name="controller" pkg="pid" type="controller" ns="/roll" output="screen">
+	<param name="node_name" value="roll_pid"/>
+	<param name="Kp" value=".015"/>
+	<param name="Ki" value=".00"/>
+	<param name="Kd" value=".0025"/>
+	<param name="upper_limit" value=".4"/>
+	<param name="lower_limit" value="-.4"/>
+	</node>
+	
+	<node name="controller" pkg="pid" type="controller" ns="/pitch" output="screen">
+	<param name="node_name" value="pitch_pid"/>
+	<param name="Kp" value=".015"/>
+	<param name="Ki" value="0"/>
+	<param name="Kd" value=".0025"/>
+	<param name="upper_limit" value=".4"/>
+	<param name="lower_limit" value="-.4"/>
+	</node>
+
+	<node name="controller" pkg="pid" type="controller" ns="/yaw" output="screen">
+	<param name="node_name" value="yaw_pid"/>
+	<param name="Kp" value=".015"/>
+	<param name="Ki" value="0"/>
+	<param name="Kd" value=".0025"/>
+	<param name="pid_enable_topic" value="False"/>
+	<param name="upper_limit" value=".3"/>
+	<param name="lower_limit" value="-.3"/>
+	</node>
+	
+	<node pkg="drone_control" name="imumap" type="imumap.py" output="screen"/>
+	<node pkg="drone_control" name="pidcontrol" type="pidcontrol.py" output="screen"/>
+	
+</launch>
